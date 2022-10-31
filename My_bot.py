@@ -15,7 +15,9 @@ answer = ['Бесспорно!', 'Никогда!', 'Обязательно!', '
           'Скоро!', 'Не бывать этому!', 'Скорее всего, да!', 'Скорее всего, нет!']
 def magic(update: Update, context: CallbackContext):
     name = update.message.from_user.first_name
-    if name[-1] == 'а' or name[-1] == 'я' and name != 'Илья' and name != 'Саша' and name != 'Женя':
+    if name[-1] == 'а' or name[-1] == 'я' and name != 'Илья' and name != 'Саша' and name != 'Женя'\
+            and name != 'Ваня' and name != 'Серёжа' and name != 'Коля' and name != 'Федя'\
+            and name != 'Дима':
         context.bot.send_message(
             chat_id=update.effective_chat.id, text=f'Приветствую Вас, повелительница {name}!'
                                                f' Я магический шар, и я знаю ответ на любой Ваш вопрос.')
